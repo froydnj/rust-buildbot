@@ -13,6 +13,9 @@ bash android-ndk-r11c/build/tools/make-standalone-toolchain.sh \
         --install-dir=/android/ndk-arm-9 \
         --ndk-dir=/android/android-ndk-r11c \
         --arch=arm
+# NB: this arm toolchain is used for testing the libc crate to ensure it
+# works against the most recent version of android.  It cannot be combined
+# with the previous toolchain!
 bash android-ndk-r11c/build/tools/make-standalone-toolchain.sh \
         --platform=android-21 \
         --toolchain=arm-linux-androideabi-4.9 \
